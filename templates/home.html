@@ -1,0 +1,65 @@
+{% extends "layout.html"%}
+{% block temperature %}
+  {% if description %}
+    <div class="col-lg-8 col-sm-12 dt"
+      style="background:url('/static/img/sunny.jpg');background-repeat: no-repeat; background-position: center; background-size: cover;">
+      <div class="tempgrid">
+        <div class="row">
+          <div class="col-sm temp"><span>{{ up }}</span>°c</div>
+          <div class="col-sm">
+            <h4>{{ date }}</h4>
+            <p>{{ time }}</p>
+            <h2 class="location">{{ city}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="col-lg-8 col-sm-12 dt"
+      style="background:url('/static/img/rain.jpg');background-repeat: no-repeat; background-position: center; background-size: cover;">
+      <div class="tempgrid">
+        <div class="row">
+          <div class="col-sm temp"><span>{{ up }}</span>°c</div>
+          <div class="col-sm">
+            <h4>{{ date }}</h4>
+            <p>{{ time }}</p>
+            <h2 class="location">{{ city}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif%}
+{% endblock %}
+
+{% block forcast %}
+  <div class="col-lg-4 col-sm-12 dt2"
+    style="background:url('/static/img/blur.jpg');background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div>
+      <h5>The Weather</h5>
+    </div>
+    <form action="{{ url_for('cus_location')}}" method="POST">
+      <input type="text" placeholder="Another location" name="location">
+    </form>
+    <div class="next">
+      <h3>Forcast for the next five days</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Days</th>
+            <th scope="col">Highest temp in °c</th>
+            <th scope="col">Lowest temp in °c</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for days in forecast_list %}
+            <tr>
+              <td>{{ days['day']}}</td>
+              <td>{{days['highest_tem']}}</td>
+              <td>{{days['lowest_tem']}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

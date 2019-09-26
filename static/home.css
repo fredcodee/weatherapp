@@ -1,0 +1,72 @@
+body {
+  background: #062a67;
+  background: -webkit-gradient(linear, left top, right top, from(#062a67), color-stop(35%, #0a0a25), color-stop(41%, #855508), to(#801470));
+  background: linear-gradient(90deg, #062a67 0%, #0a0a25 35%, #855508 41%, #801470 100%);
+  color: #ffff;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+  margin-top: 5%;
+}
+
+.dt, .dt2 {
+  height: 500px;
+}
+
+.dt .row {
+  position: absolute;
+  width: 60%;
+  bottom: 10px;
+}
+
+.dt h4 {
+  font-size: 1rem;
+  margin: 0%;
+}
+
+.dt p {
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.dt .temp {
+  font-size: 4rem;
+}
+
+.dt2 {
+  text-align: center;
+}
+
+.dt2 h5 {
+  padding: 10px;
+  font-size: 10px;
+}
+
+.dt2 input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #3a2301;
+  background-color: #110514;
+  color: #ffff;
+  padding: 5px;
+}
+
+.dt2 .next h3 {
+  margin-top: 35px;
+  font-size: 20px;
+}
+
+.dt2 table {
+  width: 80%;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dt2 tr {
+  color: #ffff;
+}
+/*# sourceMappingURL=home.css.map */
