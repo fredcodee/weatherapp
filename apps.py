@@ -67,7 +67,7 @@ def home():
   get_forecast()
   while len(forecast_list) > 5:
     forecast_list.pop()
-  if description != "Thunderstorms":
+  if description != "Thunderstorms" and description != "Showers":
     description = True
   else:
     description = False
@@ -75,7 +75,8 @@ def home():
   return(render_template('home.html', up=up, date=date, time=time, city= city, description=description, forecast_list = forecast_list))
 
 
-@app.route("/cus", methods=["GET", "POST"])
+@app.route("/page on progress",methods = ["GET","POST"])
 def cus_location():
-  pass
+  return("coming soon")
+
 
